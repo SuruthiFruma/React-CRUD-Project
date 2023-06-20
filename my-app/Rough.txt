@@ -1,0 +1,79 @@
+const Task=[
+    {
+       id:1,
+       name:'abc'
+    },
+    {
+       id:2,
+       name:'def'
+    }
+]
+
+const Tasks = () => {
+  return (
+    <div>
+     {Task.map((item)=>(
+        <h1 key={item.id}>{item.name}</h1>
+     ))}
+    </div>
+  )
+}
+
+export default Tasks
+
+
+
+
+
+
+
+
+import Header from "./components/Header"
+import Tasks from "./components/Tasks"
+import { useState } from "react"
+function App (){
+  const [task,settasks]=useState([
+    {
+       id:1,
+       name:'abc'
+    },
+    {
+       id:2,
+       name:'def'
+    }
+])
+    return(
+      <div className="container">
+      <Header title="Task Tracker"></Header>
+      <Tasks task={task}></Tasks>
+      </div>
+    )
+}
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Tasks = ({task}) => {
+   
+  return (
+    <div>
+     {task.map((item)=>(
+        <h1 key={item.id}>{item.name}</h1>
+     ))}
+    </div>
+  )
+}
+
+export default Tasks
